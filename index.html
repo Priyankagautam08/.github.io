@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyanka Gautam | AI/ML Researcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveGrid 20s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+            color: var(--accent);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--primary);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .experience-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .experience-company {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .experience-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-card li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-card li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .publications-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .publication-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .publication-item:hover {
+            transform: translateX(10px);
+        }
+
+        .publication-title {
+            font-weight: bold;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-venue {
+            color: var(--gray);
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .publication-link {
+            color: var(--primary);
+            text-decoration: none;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+
+        .publication-link:hover {
+            text-decoration: underline;
+        }
+
+        .conferences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .conference-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 3px solid var(--accent);
+        }
+
+        .conference-year {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .conference-name {
+            font-weight: bold;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .conference-location {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .conference-topic {
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">PG</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#conferences">Conferences</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Priyanka Gautam</h1>
+            <p>Ph.D. Candidate | AI/ML Researcher | Graph Neural Networks Specialist</p>
+            <p style="font-size: 1.1rem;">Applying machine learning across infrastructure resilience, NLP, and complex systems</p>
+            <div class="social-links">
+                <a href="https://github.com/Priyankagautam08" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/priyankagautam08/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:priyankagautam099@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+17853178301"><i class="fas fa-phone"></i></a>
+            </div>
+            <div style="margin-top: 2rem;">
+                <a href="#experience" class="btn-primary">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8;">
+            <p>Ph.D. candidate at Kansas State University with 7+ years of experience applying machine learning across finance, HR, and energy sectors. Specialized in Graph Neural Networks, NLP, and causal modeling with a proven track record of building scalable, data-driven solutions.</p>
+            <p style="margin-top: 1rem;">Currently working as an AI/ML Software Developer Intern at the National Renewable Energy Laboratory (NREL), focusing on resilient infrastructure modeling and deep learning pipelines on HPC systems.</p>
+        </div>
+    </section>
+
+    <section id="experience" class="section" style="background: #f1f5f9;">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">AI/ML Software Developer Intern</div>
+                        <div class="experience-company">National Renewable Energy Laboratory (NREL), Colorado, USA</div>
+                    </div>
+                    <div class="experience-date">2024 – Present</div>
+                </div>
+                <ul>
+                    <li>Set up and tested deep learning pipelines on HPC infrastructure for anomaly detection and optimal sensor placement</li>
+                    <li>Integrated Knowledge Graphs with infrastructure data to model interdependencies and improve interpretability</li>
+                    <li>Explored and prototyped LLMs for metadata extraction and system-level insights</li>
+                    <li>Collaborated with researchers to support resilient infrastructure modeling with Python-based workflow automation</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Data Science Analyst</div>
+                        <div class="experience-company">Accenture Applied Intelligence, Gurugram, India</div>
+                    </div>
+                    <div class="experience-date">2021 – 2022</div>
+                </div>
+                <ul>
+                    <li>Engineered automated workforce management tool, projecting 50% increase in task automation</li>
+                    <li>Enhanced job classification model accuracy to 90% using intelligent augmentation</li>
+                    <li>Utilized Python, NLP, Machine Learning, and Power BI for advanced analytics and strategic decision-making</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Data Science Consultant</div>
+                        <div class="experience-company">Eclerx Service Ltd., Mumbai, India</div>
+                    </div>
+                    <div class="experience-date">2019 – 2021</div>
+                </div>
+                <ul>
+                    <li>Developed automated document processing systems achieving 94% accuracy, reducing loan approval times</li>
+                    <li>Built Flask API with hybrid NLP (NER + SpaCy) for resume parsing, improving accuracy to 92%</li>
+                    <li>Designed image classification API using YOLOv3 with 99% accuracy for security applications</li>
+                    <li>Built and optimized ETL pipeline for data extraction to Hadoop clusters</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Teaching/Research Assistant</div>
+                        <div class="experience-company">IIT Gandhinagar, Gujarat, India</div>
+                    </div>
+                    <div class="experience-date">2017 – 2019</div>
+                </div>
+                <ul>
+                    <li>Developed crowd monitoring system for large-scale events using GPS/sensor data</li>
+                    <li>Created web-based traffic prediction system with JavaScript and Google Maps API</li>
+                    <li>Designed rebar counting solution for TATA INNOVERSE demonstrating computer vision in industrial settings</li>
+                    <li>Mentored over 100 students in Pattern Recognition & Machine Learning Python lab</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">MATLAB</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">JavaScript</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Machine Learning</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">GNNs</span>
+                    <span class="skill-tag">LSTMs</span>
+                    <span class="skill-tag">CNNs</span>
+                    <span class="skill-tag">NLP</span>
+                    <span class="skill-tag">Computer Vision</span>
+                    <span class="skill-tag">Time Series</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Frameworks & Libraries</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">Keras</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">Neo4j</span>
+                    <span class="skill-tag">PyG</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Tools & Platforms</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">GCP</span>
+                    <span class="skill-tag">HPC</span>
+                    <span class="skill-tag">Hadoop</span>
+                    <span class="skill-tag">PowerBI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="section" style="background: #f1f5f9;">
+        <h2 class="section-title">Publications</h2>
+        <div class="publications-list">
+            <div class="publication-item">
+                <div class="publication-title">GNN-Based Candidate Node Predictor for Influence Maximization in Temporal Graphs</div>
+                <div class="publication-venue">arXiv preprint, 2025</div>
+                <a href="https://arxiv.org/pdf/2503.23713" target="_blank" class="publication-link">View Paper →</a>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-title">GNN-based Criticality Analysis in Interconnected Infrastructure Networks</div>
+                <div class="publication-venue">2024 IEEE Green Technologies Conference (GreenTech), Springdale, AR, USA</div>
+                <a href="https://ieeexplore.ieee.org/abstract/document/10520547" target="_blank" class="publication-link">View Paper →</a>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-title">A Transductive Graph Neural Network learning for Grid Resilience Analysis</div>
+                <div class="publication-venue">2023 IEEE SmartGridComm, Glasgow, UK</div>
+                <a href="https://ieeexplore.ieee.org/abstract/document/10333912" target="_blank" class="publication-link">View Paper →</a>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-title">Scalable Criticality Analysis in Interdependent Infrastructure Systems using Functionality Graphs</div>
+                <div class="publication-venue">Submitted to International Journal of Disaster Risk Reduction, under review, 2025</div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-title">Generative AI and Workforce Transformation: Opportunities, Risks, and the Future of Technology</div>
+                <div class="publication-venue">MINK WIC Conference, 2025 (Mentored three graduate co-authors)</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="conferences" class="section">
+        <h2 class="section-title">Talks & Conferences</h2>
+        <div class="conferences-grid">
+            <div class="conference-card">
+                <div class="conference-year">2024</div>
+                <div class="conference-name">NSF-EPSCoR ARISE Annual Symposium</div>
+                <div class="conference-location">Kansas State University, Olathe</div>
+                <div class="conference-topic">Poster: Critical Nodes/Link Identification in Interconnected Systems</div>
+            </div>
+
+            <div class="conference-card">
+                <div class="conference-year">2024</div>
+                <div class="conference-name">IEEE GreenTech Conference</div>
+                <div class="conference-location">Springdale, AR</div>
+                <div class="conference-topic">GNN-based Criticality Analysis in Interconnected Infrastructure Networks</div>
+            </div>
+
+            <div class="conference-card">
+                <div class="conference-year">2024</div>
+                <div class="conference-name">JMM Joint Mathematics Meeting</div>
+                <div class="conference-location">San Diego, CA</div>
+                <div class="conference-topic">Progress Session: MRC Social Week</div>
+            </div>
+
+            <div class="conference-card">
+                <div class="conference-year">2024</div>
+                <div class="conference-name">3MT Talk at Kansas State University</div>
+                <div class="conference-location">Kansas State University, Olathe</div>
+                <div class="conference-topic">Ensuring the Heartbeat of Our City: Strategic System Hardening for Infrastructure Networks</div>
+            </div>
+
+            <div class="conference-card">
+                <div class="conference-year">2023</div>
+                <div class="conference-name">AMS MRC on Complex Social Systems</div>
+                <div class="conference-location">New York</div>
+                <div class="conference-topic">Group Presentation: Inferring Network Structure in Models of Opinion Dynamics</div>
+            </div>
+
+            <div class="conference-card">
+                <div class="conference-year">2023</div>
+                <div class="conference-name">ARISE Annual Symposium</div>
+                <div class="conference-location">Wichita, KS</div>
+                <div class="conference-topic">GNN-based ML framework for Scalable Resilience Computation with Uncertainties</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Priyanka Gautam. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Ph.D. Candidate in Electrical & Computer Engineering | Kansas State University</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.experience-card, .skill-category, .publication-item, .conference-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
