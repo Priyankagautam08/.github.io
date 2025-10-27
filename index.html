@@ -111,11 +111,18 @@
             animation: fadeInUp 0.8s ease-out;
         }
 
-        .hero p {
+        .hero .subtitle {
             font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
             margin-bottom: 2rem;
             opacity: 0.9;
-            animation: fadeInUp 1s ease-out;
+            animation: fadeInUp 1.2s ease-out;
         }
 
         .social-links {
@@ -123,13 +130,14 @@
             gap: 1.5rem;
             justify-content: center;
             margin-top: 2rem;
-            animation: fadeInUp 1.2s ease-out;
+            animation: fadeInUp 1.4s ease-out;
         }
 
         .social-links a {
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             transition: transform 0.3s, color 0.3s;
+            display: inline-block;
         }
 
         .social-links a:hover {
@@ -171,6 +179,136 @@
             height: 4px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             border-radius: 2px;
+        }
+
+        .education-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--primary);
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .education-degree {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .education-year {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .education-university {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-gpa {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border-top: 4px solid var(--accent);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            color: var(--dark);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-tag {
+            background: #e0f2fe;
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        .research-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .interest-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .interest-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
         }
 
         .experience-grid {
@@ -348,6 +486,55 @@
             font-size: 0.95rem;
         }
 
+        .certifications-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .cert-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .cert-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .cert-item {
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .cert-title {
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        .cert-issuer {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+
+        .cert-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .cert-link:hover {
+            text-decoration: underline;
+        }
+
         footer {
             background: var(--dark);
             color: white;
@@ -364,6 +551,7 @@
             border-radius: 30px;
             font-weight: bold;
             transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 1rem;
         }
 
         .btn-primary:hover {
@@ -384,6 +572,10 @@
             .experience-header {
                 flex-direction: column;
             }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -393,10 +585,11 @@
             <a href="#" class="logo">PG</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#publications">Publications</a></li>
-                <li><a href="#conferences">Conferences</a></li>
+                <li><a href="#leadership">Leadership</a></li>
             </ul>
         </div>
     </nav>
@@ -404,13 +597,17 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Priyanka Gautam</h1>
-            <p>Ph.D. Candidate | AI/ML Researcher | Graph Neural Networks Specialist</p>
-            <p style="font-size: 1.1rem;">Applying machine learning across infrastructure resilience, NLP, and complex systems</p>
+            <p class="subtitle">Ph.D. Candidate | AI/ML Researcher</p>
+            <p class="description">Applying machine learning across FinTech, HR Analytics, Digital Marketing, and Energy sectors</p>
+            <p class="description">Professional with 7+ years of experience in data-driven solutions</p>
             <div class="social-links">
-                <a href="https://github.com/Priyankagautam08" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/priyankagautam08/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:priyankagautam099@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="tel:+17853178301"><i class="fas fa-phone"></i></a>
+                <a href="https://github.com/Priyankagautam08" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/priyankagautam08/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://leetcode.com/YOUR_USERNAME" target="_blank" title="LeetCode"><i class="fas fa-code"></i></a>
+                <a href="https://www.hackerrank.com/YOUR_USERNAME" target="_blank" title="HackerRank"><i class="fab fa-hackerrank"></i></a>
+                <a href="mailto:priyankagautam099@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+17853178301" title="Phone"><i class="fas fa-phone"></i></a>
             </div>
             <div style="margin-top: 2rem;">
                 <a href="#experience" class="btn-primary">View My Work</a>
@@ -421,8 +618,131 @@
     <section id="about" class="section">
         <h2 class="section-title">About Me</h2>
         <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8;">
-            <p>Ph.D. candidate at Kansas State University with 7+ years of experience applying machine learning across finance, HR, and energy sectors. Specialized in Graph Neural Networks, NLP, and causal modeling with a proven track record of building scalable, data-driven solutions.</p>
+            <p>Ph.D. candidate at Kansas State University with 7+ years of experience applying machine learning across FinTech, HR Analytics, Digital Marketing, and Energy sectors (NREL). Specialized in Graph Neural Networks, NLP, and causal modeling with a proven track record of building scalable, data-driven solutions.</p>
             <p style="margin-top: 1rem;">Currently working as an AI/ML Software Developer Intern at the National Renewable Energy Laboratory (NREL), focusing on resilient infrastructure modeling and deep learning pipelines on HPC systems.</p>
+        </div>
+    </section>
+
+    <section id="education" class="section" style="background: #f1f5f9;">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+            <div class="education-card">
+                <div class="education-header">
+                    <div>
+                        <div class="education-degree">Ph.D. in Electrical & Computer Engineering</div>
+                        <div class="education-university">Kansas State University, USA</div>
+                        <div class="education-gpa">GPA: 3.9/4.0 | Expected: December 2025</div>
+                    </div>
+                    <div class="education-year">2022 - Present</div>
+                </div>
+            </div>
+
+            <div class="education-card">
+                <div class="education-header">
+                    <div>
+                        <div class="education-degree">Master's in Computer Science & Engineering</div>
+                        <div class="education-university">IIT Gandhinagar, India</div>
+                        <div class="education-gpa">CGPA: 7.6/10</div>
+                    </div>
+                    <div class="education-year">2017 - 2019</div>
+                </div>
+            </div>
+
+            <div class="education-card">
+                <div class="education-header">
+                    <div>
+                        <div class="education-degree">B.Tech in Information Technology</div>
+                        <div class="education-university">AKTU University, India</div>
+                        <div class="education-gpa">75%</div>
+                    </div>
+                    <div class="education-year">2012 - 2016</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2 class="section-title">Projects & Research Areas</h2>
+        <div class="projects-grid">
+            <div class="project-card" onclick="window.open('https://en.wikipedia.org/wiki/Graph_neural_network', '_blank')">
+                <div class="project-icon"><i class="fas fa-project-diagram"></i></div>
+                <div class="project-title">Graph Neural Networks for Infrastructure</div>
+                <div class="project-description">Developing GNN-based models for critical infrastructure analysis, achieving 97.24% node classification accuracy and 99.01% link classification accuracy.</div>
+                <div class="project-tags">
+                    <span class="project-tag">GNNs</span>
+                    <span class="project-tag">PyTorch</span>
+                    <span class="project-tag">Infrastructure</span>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.open('https://en.wikipedia.org/wiki/Natural_language_processing', '_blank')">
+                <div class="project-icon"><i class="fas fa-language"></i></div>
+                <div class="project-title">NLP for Document Processing</div>
+                <div class="project-description">Built automated document processing systems with 94% accuracy using NER, SpaCy, and hybrid NLP approaches for banking and HR applications.</div>
+                <div class="project-tags">
+                    <span class="project-tag">NLP</span>
+                    <span class="project-tag">SpaCy</span>
+                    <span class="project-tag">Flask API</span>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.open('https://en.wikipedia.org/wiki/Computer_vision', '_blank')">
+                <div class="project-icon"><i class="fas fa-eye"></i></div>
+                <div class="project-title">Computer Vision Solutions</div>
+                <div class="project-description">Implemented YOLOv3-based image classification achieving 99% accuracy for security applications and industrial automation.</div>
+                <div class="project-tags">
+                    <span class="project-tag">YOLOv3</span>
+                    <span class="project-tag">CNN</span>
+                    <span class="project-tag">OpenCV</span>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.open('https://en.wikipedia.org/wiki/Knowledge_graph', '_blank')">
+                <div class="project-icon"><i class="fas fa-sitemap"></i></div>
+                <div class="project-title">Knowledge Graphs & LLMs</div>
+                <div class="project-description">Integrating Knowledge Graphs with infrastructure data and prototyping LLMs for metadata extraction at NREL.</div>
+                <div class="project-tags">
+                    <span class="project-tag">Knowledge Graphs</span>
+                    <span class="project-tag">LLMs</span>
+                    <span class="project-tag">Neo4j</span>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.open('https://en.wikipedia.org/wiki/Influence_maximization', '_blank')">
+                <div class="project-icon"><i class="fas fa-share-alt"></i></div>
+                <div class="project-title">Influence Maximization</div>
+                <div class="project-description">Dynamic graph influence maximization using cascade modeling, reinforcement learning, and opinion-aware approaches.</div>
+                <div class="project-tags">
+                    <span class="project-tag">Graph Theory</span>
+                    <span class="project-tag">RL</span>
+                    <span class="project-tag">Networks</span>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.open('https://en.wikipedia.org/wiki/Resilience_(network)', '_blank')">
+                <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="project-title">Infrastructure Resilience</div>
+                <div class="project-description">Intelligent infrastructure analysis, optimization, and social equity research in critical infrastructure systems.</div>
+                <div class="project-tags">
+                    <span class="project-tag">Resilience</span>
+                    <span class="project-tag">Optimization</span>
+                    <span class="project-tag">HPC</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 3rem;">
+            <h3 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">Research Interests</h3>
+            <div class="research-interests">
+                <a href="https://en.wikipedia.org/wiki/Graph_neural_network" target="_blank" class="interest-btn">Graph Neural Networks</a>
+                <a href="https://en.wikipedia.org/wiki/Natural_language_processing" target="_blank" class="interest-btn">Natural Language Processing</a>
+                <a href="https://en.wikipedia.org/wiki/Infrastructure" target="_blank" class="interest-btn">Critical Infrastructure</a>
+                <a href="https://en.wikipedia.org/wiki/Network_science" target="_blank" class="interest-btn">Network Dynamics</a>
+                <a href="https://en.wikipedia.org/wiki/Influence_maximization" target="_blank" class="interest-btn">Influence Maximization</a>
+                <a href="https://en.wikipedia.org/wiki/Causal_inference" target="_blank" class="interest-btn">Causal Modeling</a>
+                <a href="https://en.wikipedia.org/wiki/Computer_vision" target="_blank" class="interest-btn">Computer Vision</a>
+                <a href="https://en.wikipedia.org/wiki/Deep_learning" target="_blank" class="interest-btn">Deep Learning</a>
+            </div>
         </div>
     </section>
 
@@ -498,9 +818,12 @@
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
             <div class="skill-category">
-                <h3>Programming Languages</h3>
+                <h3><i class="fas fa-code"></i> Programming</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Python</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">SciPy</span>
                     <span class="skill-tag">C</span>
                     <span class="skill-tag">MATLAB</span>
                     <span class="skill-tag">R</span>
@@ -510,38 +833,51 @@
             </div>
 
             <div class="skill-category">
-                <h3>Machine Learning</h3>
+                <h3><i class="fas fa-brain"></i> ML/DL & AI</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">GNNs</span>
+                    <span class="skill-tag">Graph Neural Networks</span>
                     <span class="skill-tag">LSTMs</span>
                     <span class="skill-tag">CNNs</span>
+                    <span class="skill-tag">Transformers</span>
                     <span class="skill-tag">NLP</span>
+                    <span class="skill-tag">LLMs</span>
                     <span class="skill-tag">Computer Vision</span>
+                    <span class="skill-tag">YOLOv3</span>
+                    <span class="skill-tag">Causal Inference</span>
                     <span class="skill-tag">Time Series</span>
+                    <span class="skill-tag">Reinforcement Learning</span>
                 </div>
             </div>
 
             <div class="skill-category">
-                <h3>Frameworks & Libraries</h3>
+                <h3><i class="fas fa-layer-group"></i> Frameworks</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">PyTorch</span>
                     <span class="skill-tag">TensorFlow</span>
                     <span class="skill-tag">Keras</span>
+                    <span class="skill-tag">Scikit-learn</span>
                     <span class="skill-tag">Flask</span>
-                    <span class="skill-tag">Neo4j</span>
+                    <span class="skill-tag">Hugging Face</span>
                     <span class="skill-tag">PyG</span>
+                    <span class="skill-tag">DGL</span>
+                    <span class="skill-tag">NetworkX</span>
                 </div>
             </div>
 
             <div class="skill-category">
-                <h3>Tools & Platforms</h3>
+                <h3><i class="fas fa-database"></i> Data & Tools</h3>
                 <div class="skill-tags">
+                    <span class="skill-tag">Neo4j</span>
+                    <span class="skill-tag">RDFlib</span>
+                    <span class="skill-tag">Gurobi</span>
                     <span class="skill-tag">Docker</span>
                     <span class="skill-tag">Git</span>
                     <span class="skill-tag">GCP</span>
                     <span class="skill-tag">HPC</span>
                     <span class="skill-tag">Hadoop</span>
-                    <span class="skill-tag">PowerBI</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Dataiku</span>
+                    <span class="skill-tag">ETL</span>
                 </div>
             </div>
         </div>
@@ -552,30 +888,118 @@
         <div class="publications-list">
             <div class="publication-item">
                 <div class="publication-title">GNN-Based Candidate Node Predictor for Influence Maximization in Temporal Graphs</div>
-                <div class="publication-venue">arXiv preprint, 2025</div>
+                <div class="publication-venue">P. Gautam, B. Natarajan, S. Munikoti, S. M. Ferdous, M. Halappanavar | arXiv preprint, 2025</div>
                 <a href="https://arxiv.org/pdf/2503.23713" target="_blank" class="publication-link">View Paper →</a>
             </div>
 
             <div class="publication-item">
                 <div class="publication-title">GNN-based Criticality Analysis in Interconnected Infrastructure Networks</div>
-                <div class="publication-venue">2024 IEEE Green Technologies Conference (GreenTech), Springdale, AR, USA</div>
+                <div class="publication-venue">P. Gautam, B. Natarajan | 2024 IEEE Green Technologies Conference (GreenTech), Springdale, AR, USA</div>
                 <a href="https://ieeexplore.ieee.org/abstract/document/10520547" target="_blank" class="publication-link">View Paper →</a>
             </div>
 
             <div class="publication-item">
                 <div class="publication-title">A Transductive Graph Neural Network learning for Grid Resilience Analysis</div>
-                <div class="publication-venue">2023 IEEE SmartGridComm, Glasgow, UK</div>
+                <div class="publication-venue">P. Gautam, A. Sreejith, B. Natarajan | 2023 IEEE SmartGridComm, Glasgow, UK</div>
                 <a href="https://ieeexplore.ieee.org/abstract/document/10333912" target="_blank" class="publication-link">View Paper →</a>
             </div>
 
             <div class="publication-item">
                 <div class="publication-title">Scalable Criticality Analysis in Interdependent Infrastructure Systems using Functionality Graphs</div>
-                <div class="publication-venue">Submitted to International Journal of Disaster Risk Reduction, under review, 2025</div>
+                <div class="publication-venue">P. Gautam, R. Madbhavi, B. Natarajan | Submitted to International Journal of Disaster Risk Reduction, under review, 2025</div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-title">GNN-Based Candidate Node Predictor for Influence Maximization in Temporal Graphs</div>
+                <div class="publication-venue">P. Gautam, B. Natarajan, S. Munikoti, S. M. Ferdous, M. Halappanavar | Submitted to Neurocomputing Journal, under review, 2025</div>
             </div>
 
             <div class="publication-item">
                 <div class="publication-title">Generative AI and Workforce Transformation: Opportunities, Risks, and the Future of Technology</div>
-                <div class="publication-venue">MINK WIC Conference, 2025 (Mentored three graduate co-authors)</div>
+                <div class="publication-venue">P. Gautam, B. Balasubramaniyam, S. Malallah, H. Küçük McGinty | MINK WIC Conference, 2025</div>
+                <p style="font-size: 0.85rem; color: var(--gray); margin-top: 0.5rem;">Mentored three graduate co-authors</p>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-title">Beyond Structure: A Causal Perspective on Network Influence</div>
+                <div class="publication-venue">P. Gautam, B. Natarajan et al. | In preparation, 2025</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="leadership" class="section">
+        <h2 class="section-title">Leadership & Service</h2>
+        <div class="experience-grid">
+            <div class="experience-card" style="border-left-color: var(--secondary);">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title"><i class="fas fa-users"></i> ACM-W Chapter Leader</div>
+                        <div class="experience-company">Association for Computing Machinery - Women</div>
+                    </div>
+                    <div class="experience-date">Kansas State University</div>
+                </div>
+                <p>Leading initiatives to support and empower women in computing through workshops, networking events, and mentorship programs.</p>
+            </div>
+
+            <div class="experience-card" style="border-left-color: var(--secondary);">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title"><i class="fas fa-user-graduate"></i> Reviewer</div>
+                        <div class="experience-company">Women in Machine Learning (WiML)</div>
+                    </div>
+                    <div class="experience-date">Active</div>
+                </div>
+                <p>Contributing to the machine learning community by reviewing research submissions and supporting women researchers in the field.</p>
+            </div>
+
+            <div class="experience-card" style="border-left-color: var(--secondary);">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title"><i class="fas fa-chalkboard-teacher"></i> Mentor</div>
+                        <div class="experience-company">K-State Engineering</div>
+                    </div>
+                    <div class="experience-date">Kansas State University</div>
+                </div>
+                <p>Mentoring undergraduate and graduate students in engineering, providing guidance on research, career development, and academic success.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="section" style="background: #f1f5f9;">
+        <h2 class="section-title">Certifications & Training</h2>
+        <div class="certifications-container">
+            <div class="cert-category">
+                <h3>Professional Certifications</h3>
+                <div class="cert-item">
+                    <div class="cert-title">Machine Learning Specialist</div>
+                    <div class="cert-issuer">LinkedIn Learning • 2020</div>
+                    <a href="https://www.linkedin.com/learning/certificates/9ad39d62e9cf08688776b011301eb03632bdd5919d70de73fb7d05160d1d5b07" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Dataiku Core Designer</div>
+                    <div class="cert-issuer">Dataiku • 2020</div>
+                    <a href="https://verify.skilljar.com/c/qjcg5uwxqcdi" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Certified Marketing Analytics Practitioner</div>
+                    <div class="cert-issuer">Henry Havinson • 32-hour intensive training</div>
+                </div>
+            </div>
+
+            <div class="cert-category">
+                <h3>Workshops & Summer Schools</h3>
+                <div class="cert-item">
+                    <div class="cert-title">AMS MRC on Complex Social Systems</div>
+                    <div class="cert-issuer">June 18-24, 2023 • Opinion modeling & network reconstruction</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Summer School in Computer Vision & Modern AI</div>
+                    <div class="cert-issuer">IIIT Hyderabad • July 2-7, 2022</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Summer School in Machine Learning & Advanced AI</div>
+                    <div class="cert-issuer">IIIT Hyderabad • July 8-14, 2022</div>
+                </div>
             </div>
         </div>
     </section>
@@ -594,7 +1018,7 @@
                 <div class="conference-year">2024</div>
                 <div class="conference-name">IEEE GreenTech Conference</div>
                 <div class="conference-location">Springdale, AR</div>
-                <div class="conference-topic">GNN-based Criticality Analysis in Interconnected Infrastructure Networks</div>
+                <div class="conference-topic">Presentation: GNN-based Criticality Analysis in Interconnected Infrastructure Networks</div>
             </div>
 
             <div class="conference-card">
@@ -606,7 +1030,7 @@
 
             <div class="conference-card">
                 <div class="conference-year">2024</div>
-                <div class="conference-name">3MT Talk at Kansas State University</div>
+                <div class="conference-name">3MT Talk - Three Minute Thesis</div>
                 <div class="conference-location">Kansas State University, Olathe</div>
                 <div class="conference-topic">Ensuring the Heartbeat of Our City: Strategic System Hardening for Infrastructure Networks</div>
             </div>
@@ -614,15 +1038,15 @@
             <div class="conference-card">
                 <div class="conference-year">2023</div>
                 <div class="conference-name">AMS MRC on Complex Social Systems</div>
-                <div class="conference-location">New York</div>
+                <div class="conference-location">Beaver Hollow, New York</div>
                 <div class="conference-topic">Group Presentation: Inferring Network Structure in Models of Opinion Dynamics</div>
             </div>
 
             <div class="conference-card">
                 <div class="conference-year">2023</div>
                 <div class="conference-name">ARISE Annual Symposium</div>
-                <div class="conference-location">Wichita, KS</div>
-                <div class="conference-topic">GNN-based ML framework for Scalable Resilience Computation with Uncertainties</div>
+                <div class="conference-location">Wichita State University, KS</div>
+                <div class="conference-topic">Poster: GNN-based ML framework for Scalable Resilience Computation with Uncertainties</div>
             </div>
         </div>
     </section>
@@ -630,6 +1054,11 @@
     <footer>
         <p>&copy; 2025 Priyanka Gautam. All rights reserved.</p>
         <p style="margin-top: 0.5rem;">Ph.D. Candidate in Electrical & Computer Engineering | Kansas State University</p>
+        <div style="margin-top: 1rem;">
+            <a href="https://github.com/Priyankagautam08" target="_blank" style="color: white; margin: 0 0.5rem;"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/priyankagautam08/" target="_blank" style="color: white; margin: 0 0.5rem;"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:priyankagautam099@gmail.com" style="color: white; margin: 0 0.5rem;"><i class="fas fa-envelope"></i></a>
+        </div>
     </footer>
 
     <script>
@@ -659,7 +1088,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.experience-card, .skill-category, .publication-item, .conference-card').forEach(el => {
+        document.querySelectorAll('.experience-card, .skill-category, .publication-item, .conference-card, .education-card, .project-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
